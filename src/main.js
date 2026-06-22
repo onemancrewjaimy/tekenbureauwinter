@@ -18,7 +18,7 @@ const footerEl = document.getElementById('site-footer');
 const currentPath = document.body.dataset.path || '/';
 
 if (headerEl) headerEl.innerHTML = renderHeader(currentPath);
-if (footerEl) footerEl.innerHTML = renderFooter();
+if (footerEl) footerEl.innerHTML = renderFooter(currentPath);
 
 initNav();
 initBlueprintGrid();

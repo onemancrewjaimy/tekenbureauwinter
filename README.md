@@ -57,6 +57,27 @@ npm run preview
 > configuratie. Wil je dat `/diensten` (zonder slash) ook werkt, stel dan op
 > je hostingplatform een trailing-slash-redirect in.
 
+Alle interne links en het logo-pad zijn relatief (`vite.config.js` heeft
+`base: './'`), dus de build werkt zowel op een domeinroot als op een submap
+(bv. een GitHub Pages project-site op `username.github.io/repo-naam/`)
+zonder extra configuratie.
+
+## Deployen naar GitHub Pages
+
+Er staat een workflow in `.github/workflows/deploy.yml` die bij elke push
+naar `main` automatisch `npm ci && npm run build` draait en de inhoud van
+`dist/` publiceert. **Eenmalig instellen:** ga in de GitHub-repo naar
+**Settings → Pages → Build and deployment → Source** en kies
+**"GitHub Actions"** (in plaats van "Deploy from a branch"). Daarna
+publiceert elke push naar `main` automatisch een nieuwe versie.
+
+> **Belangrijk:** publiceer nooit de ruwe broncode direct (bv. via "Deploy
+> from a branch" op de `main`-branch zonder build-stap). De browser kan de
+> `import './styles/...css'`-statements in `src/main.js` niet native
+> uitvoeren — dat wordt alleen tijdens `npm run build` door Vite omgezet
+> naar een echte `<link rel="stylesheet">`. Zonder build-stap krijg je een
+> volledig ongestylede pagina zonder werkende navigatie.
+
 ## Mappenstructuur
 
 ```

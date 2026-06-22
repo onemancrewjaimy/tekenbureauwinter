@@ -2,6 +2,12 @@
  * Gedeelde header en footer, als herbruikbare "partials" (vanilla JS,
  * geen framework). Elke pagina rendert deze via renderHeader()/renderFooter()
  * in een leeg <header id="site-header"> / <footer id="site-footer"> element.
+ *
+ * Alle interne links zijn relatief (geen leidende "/"), berekend op basis
+ * van de diepte van de huidige pagina. Dat is nodig omdat deze site ook
+ * als project-site op een submap kan draaien (bv. GitHub Pages:
+ * username.github.io/repo-naam/) — een root-absoluut pad als "/diensten/"
+ * zou daar naar de verkeerde plek wijzen.
  */
 
 const NAV_LINKS = [
@@ -25,18 +31,31 @@ function isActive(currentPath, href) {
   return normalize(currentPath) === normalize(href);
 }
 
+/** "/" -> 0, "/diensten/" -> 1, ... zodat we weten hoeveel "../" er nodig zijn. */
+function pathDepth(currentPath) {
+  return currentPath.split('/').filter(Boolean).length;
+}
+
+/** Maakt een root-absoluut pad ("/diensten/") relatief t.o.v. de huidige pagina. */
+function toRelative(prefix, absoluteHref) {
+  return prefix + absoluteHref.replace(/^\//, '');
+}
+
 export function renderHeader(currentPath = '/') {
+  const depth = pathDepth(currentPath);
+  const prefix = depth === 0 ? './' : '../'.repeat(depth);
+
   const links = NAV_LINKS.map(
     (link) => `
       <li>
-        <a href="${link.href}" ${isActive(currentPath, link.href) ? 'aria-current="page"' : ''}>${link.label}</a>
+        <a href="${toRelative(prefix, link.href)}" ${isActive(currentPath, link.href) ? 'aria-current="page"' : ''}>${link.label}</a>
       </li>`
   ).join('');
 
   return `
     <div class="site-header__inner container">
-      <a class="site-header__logo" href="/" aria-label="Tekenbureau Winter — naar de homepage">
-        <img src="/images/logo.png" alt="Tekenbureau Winter" width="180" height="47" loading="eager" />
+      <a class="site-header__logo" href="${prefix}" aria-label="Tekenbureau Winter — naar de homepage">
+        <img src="${prefix}images/logo.png" alt="Tekenbureau Winter" width="180" height="47" loading="eager" />
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">
         <ul class="site-nav__list">${links}</ul>
@@ -47,7 +66,10 @@ export function renderHeader(currentPath = '/') {
     </div>`;
 }
 
-export function renderFooter() {
+export function renderFooter(currentPath = '/') {
+  const depth = pathDepth(currentPath);
+  const prefix = depth === 0 ? './' : '../'.repeat(depth);
+
   const social = SOCIAL_LINKS.map(
     (s) => `<a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.label} (opent in nieuw tabblad)"><span aria-hidden="true">${s.code}</span></a>`
   ).join('');
@@ -55,8 +77,8 @@ export function renderFooter() {
   return `
     <div class="site-footer__inner container">
       <div class="site-footer__brand">
-        <a class="site-footer__logo" href="/" aria-label="Tekenbureau Winter — naar de homepage">
-          <img src="/images/logo.png" alt="Tekenbureau Winter" width="160" height="42" loading="lazy" />
+        <a class="site-footer__logo" href="${prefix}" aria-label="Tekenbureau Winter — naar de homepage">
+          <img src="${prefix}images/logo.png" alt="Tekenbureau Winter" width="160" height="42" loading="lazy" />
         </a>
         <p class="site-footer__tagline">Jouw visie, onze blauwdruk</p>
       </div>

@@ -5,6 +5,11 @@ import { resolve } from 'path';
 // so the routes match the required navigation paths exactly
 // (/diensten, /projecten, /over-tekenbureau-winter, /pakketen, /contact).
 export default defineConfig({
+  // Relatieve base: zo werkt de build vanaf elke submap (bv. GitHub Pages
+  // project-sites op username.github.io/repo-naam/) zonder dat de repo-
+  // naam hier hardcoded hoeft te staan. Vite berekent per HTML-bestand
+  // automatisch de juiste "../"-diepte voor de gebundelde CSS/JS.
+  base: './',
   build: {
     rollupOptions: {
       input: {
