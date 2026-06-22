@@ -70,8 +70,12 @@ main {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
-  background: rgba(20, 20, 20, 0.82);
-  backdrop-filter: blur(10px) saturate(1.1);
+  /* Bewust geen backdrop-filter hier: filter/backdrop-filter op een
+     voorouder creëert een containing block voor "position: fixed"-
+     kinderen, waardoor het fixed mobile-menu (.site-nav, hieronder)
+     niet meer relatief aan de viewport zou positioneren maar aan deze
+     header-balk — met een doorzichtig, kapot menu als gevolg. */
+  background: rgba(15, 15, 14, 0.97);
   border-bottom: 1px solid var(--color-line);
 }
 
