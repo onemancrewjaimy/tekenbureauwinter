@@ -26,6 +26,9 @@
   --color-line: rgba(244, 241, 234, 0.14);
   --color-line-strong: rgba(244, 241, 234, 0.34);
   --color-line-accent: rgba(76, 170, 201, 0.55);
+  /* Bewust een stuk subtieler dan --color-line: het blueprint-raster
+     beslaat de volledige achtergrond en moet op de achtergrond blijven. */
+  --color-grid-line: rgba(244, 241, 234, 0.05);
 
   /* ---------- Tekst op papier (lichte secties) ---------- */
   --color-text-on-paper: #181715;
@@ -34,7 +37,7 @@
   --color-line-on-paper-strong: rgba(20, 20, 20, 0.32);
 
   /* ---------- Typografie ---------- */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Space Mono", "SFMono-Regular", Consolas, monospace;
 

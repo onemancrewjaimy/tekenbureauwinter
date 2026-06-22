@@ -93,4 +93,13 @@ export function initScrollReveal() {
         );
       });
   });
+
+  // Webfonts en foto's laden ná de eerste ScrollTrigger-berekening en
+  // verschuiven de pagina-layout. Zonder refresh blijven start/eind-punten
+  // op de oude posities staan, waardoor animaties op het verkeerde moment
+  // starten en halverwege "vastlopen" zodra je voorbij het echte punt scrollt.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => ScrollTrigger.refresh());
+  }
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 }
