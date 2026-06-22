@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tekenbureau Winter — Jouw visie, onze blauwdruk</title>
+    <meta
+      name="description"
+      content="Tekenbureau Winter ontwerpt bouwtekeningen voor aanbouw, opbouw, overkappingen en detaillering in Heerhugowaard — voor particulieren en bouwbedrijven."
+    />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-path="/">
+    <a class="skip-link" href="#main-content">Direct naar inhoud</a>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main-content">
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <div class="hero__kicker">
+              <span class="eyebrow">Tekenbureau Winter · Heerhugowaard</span>
+            </div>
+            <h1 data-reveal>Tekenbureau Winter: Jouw visie, onze blauwdruk</h1>
+            <div class="hero__actions" data-reveal>
+              <a class="btn btn--primary" href="/contact/">
+                Start je project
+                <svg class="btn__arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                  <path d="M0.5 5H13M13 5L8.5 0.5M13 5L8.5 9.5" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </a>
+            </div>
+            <div class="hero__meta-row blueprint-tag">
+              <span>Aanbouw · Opbouw · Overkapping · Detaillering</span>
+              <span>Bouwkundig tekenwerk</span>
+            </div>
+          </div>
+          <div class="hero__art" id="hero-art" data-reveal-fade></div>
+        </div>
+      </section>
+
+      <!-- ============ DIENSTEN ============ -->
+      <section class="section section--divider">
+        <div class="container">
+          <div class="split">
+            <div class="section-head" data-reveal style="margin-bottom: 0;">
+              <span class="eyebrow">Onze diensten</span>
+              <h2>Tekenoplossingen op maat</h2>
+              <p>
+                Bij Tekenbureau Winter bieden we een breed scala aan tekenoplossingen, nauwkeurig
+                afgestemd op jouw specifieke wensen. Van de eerste schets tot de definitieve
+                blauwdruk, wij zorgen voor helderheid, functionaliteit en een onmiskenbare
+                esthetiek.
+              </p>
+            </div>
+            <!-- TODO: vervang door sfeerbeeld (bv. een ingemeten interieur of werktekening op een bureau) -->
+            <figure class="photo-placeholder" data-reveal-scale>
+              <span class="photo-placeholder__label">Sfeerbeeld · 4:3</span>
+            </figure>
+          </div>
+
+          <div class="grid grid--2" style="margin-top: var(--space-7);" data-reveal-stagger>
+            <article class="card">
+              <span class="card__index">01</span>
+              <h3 class="card__title">Serre of Aanbouw</h3>
+              <p class="card__text">
+                Vergroot je leefruimte met een stijlvolle aanbouw. Wij ontwerpen functionele en
+                esthetische uitbreidingen die perfect aansluiten bij de bestaande architectuur en
+                jouw woonwensen.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card__index">02</span>
+              <h3 class="card__title">Opbouw</h3>
+              <p class="card__text">
+                Creëer extra verdiepingen met een doordachte opbouw. Wij vertalen jouw ideeën naar
+                duurzame en ruimtelijke ontwerpen die de waarde en functionaliteit van je pand
+                verhogen.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card__index">03</span>
+              <h3 class="card__title">Overkappingen</h3>
+              <p class="card__text">
+                Geniet langer van het buitenleven met een elegante overkapping. Of het nu een
+                terrasoverkapping of carport is, wij ontwerpen een stijlvolle en duurzame
+                oplossing die bij jouw woning past.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card__index">04</span>
+              <h3 class="card__title">Detaillering</h3>
+              <p class="card__text">
+                Precisie is cruciaal. Wij leveren gedetailleerde tekeningen die alle technische
+                aspecten en materialen nauwkeurig specificeren, essentieel voor een vlekkeloze
+                uitvoering van je project.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT (kort, op de homepage) ============ -->
+      <section class="section section--paper section--divider">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Contact</span>
+            <h2>Neem contact met ons op</h2>
+          </div>
+
+          <div class="contact-grid">
+            <form class="form" data-contact-form data-reveal novalidate>
+              <div class="form__field">
+                <label for="naam">Naam *</label>
+                <input type="text" id="naam" name="naam" autocomplete="name" required />
+              </div>
+              <div class="form__field">
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+              <div class="form__field">
+                <label for="bericht">Bericht *</label>
+                <textarea id="bericht" name="bericht" required></textarea>
+              </div>
+              <!-- Honeypot: onzichtbaar voor mensen, lokt spambots -->
+              <div class="form__honeypot" aria-hidden="true">
+                <label for="laat-dit-veld-leeg">Laat dit veld leeg</label>
+                <input type="text" id="laat-dit-veld-leeg" name="laat-dit-veld-leeg" tabindex="-1" autocomplete="off" />
+              </div>
+              <button class="btn btn--primary" type="submit">
+                Verzenden
+                <svg class="btn__arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                  <path d="M0.5 5H13M13 5L8.5 0.5M13 5L8.5 9.5" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </button>
+              <p class="form__status" role="status" data-form-status></p>
+            </form>
+
+            <div class="contact-info" data-reveal>
+              <div class="contact-info__block">
+                <h3>Locatie</h3>
+                <address>
+                  Truus Schröderplantsoen 10<br />
+                  1705 ND, Heerhugowaard<br />
+                  Nederland
+                </address>
+              </div>
+              <div class="contact-info__block">
+                <h3>Contactgegevens</h3>
+                <p>E-mail: <a href="mailto:info@tekenbureauwinter.com">info@tekenbureauwinter.com</a></p>
+                <p>Telefoon: <a href="tel:+31681656361">06-81 65 63 61</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/home.js"></script>
+  </body>
+</html>

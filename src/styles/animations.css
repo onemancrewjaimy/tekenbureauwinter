@@ -1,0 +1,76 @@
+/*
+  Initiële (verborgen) staten voor elementen die door GSAP ScrollTrigger
+  worden onthuld. Zonder JS (of voor de allereerste paint) blijft alles
+  gewoon leesbaar — zie de ".no-js" fallback onderaan.
+*/
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+[data-reveal-fade] {
+  opacity: 0;
+}
+
+[data-reveal-scale] {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.no-js [data-reveal],
+.no-js [data-reveal-fade],
+.no-js [data-reveal-scale],
+.no-js [data-reveal-stagger] > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero blueprint-raster: subtiele zwevende beweging, los van scroll-parallax (die via JS transform gaat) */
+@keyframes blueprint-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+.blueprint-grid__layer--drift {
+  animation: blueprint-drift 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blueprint-grid__layer--drift {
+    animation: none;
+  }
+}
+
+/* Potlood-hover: lijn die "aangezet" wordt */
+.pencil-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.pencil-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-draw);
+}
+
+.pencil-underline:hover::after,
+.pencil-underline:focus-visible::after {
+  transform: scaleX(1);
+}

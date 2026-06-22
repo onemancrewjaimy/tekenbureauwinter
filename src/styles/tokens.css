@@ -1,0 +1,86 @@
+/*
+  Design tokens — Tekenbureau Winter
+  Kleuren gesampled uit de live site (jwwb.nl theme-css, --jw-accent-container-background-color: #4caac9)
+  en het logo (antraciet/zwarte lijntekening). Donker, getekend, "blueprint" thema.
+*/
+
+:root {
+  /* ---------- Kleur: inkt (donkere achtergronden) ---------- */
+  --color-ink: #141414;
+  --color-ink-deep: #0d0d0d;
+  --color-ink-soft: #1c1c1a;
+  --color-ink-raised: #232320;
+
+  /* ---------- Kleur: papier (licht, gebroken wit) ---------- */
+  --color-paper: #f4f1ea;
+  --color-paper-dim: #cfc9ba;
+  --color-paper-faint: #8c887b;
+
+  /* ---------- Kleur: accent — gesampled van tekenbureauwinter.com ---------- */
+  --color-accent: #4caac9;
+  --color-accent-tint: #7ec4dc;
+  --color-accent-deep: #2f7d96;
+  --color-accent-ink: #06222b;
+
+  /* ---------- Lijnen / rasters (op donkere achtergrond) ---------- */
+  --color-line: rgba(244, 241, 234, 0.14);
+  --color-line-strong: rgba(244, 241, 234, 0.34);
+  --color-line-accent: rgba(76, 170, 201, 0.55);
+
+  /* ---------- Tekst op papier (lichte secties) ---------- */
+  --color-text-on-paper: #181715;
+  --color-muted-on-paper: #5b5648;
+  --color-line-on-paper: rgba(20, 20, 20, 0.14);
+  --color-line-on-paper-strong: rgba(20, 20, 20, 0.32);
+
+  /* ---------- Typografie ---------- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Space Mono", "SFMono-Regular", Consolas, monospace;
+
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.75rem;
+  --fs-xl: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
+  --fs-2xl: clamp(3rem, 1.8rem + 5vw, 6rem);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+
+  --ls-wide: 0.18em;
+  --ls-wider: 0.28em;
+
+  /* ---------- Spacing (8px ritme) ---------- */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+  --space-9: 9rem;
+
+  /* ---------- Layout ---------- */
+  --container-max: 78rem;
+  --container-pad: clamp(1.25rem, 2vw + 0.5rem, 3rem);
+  --header-height: 5.5rem;
+
+  /* ---------- Vorm & beweging ---------- */
+  --radius-sm: 1px;
+  --ease-draw: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 220ms;
+  --duration-base: 420ms;
+  --duration-slow: 900ms;
+
+  /* ---------- Z-index schaal ---------- */
+  --z-grid: 0;
+  --z-content: 10;
+  --z-header: 50;
+  --z-overlay: 80;
+}

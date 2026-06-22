@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Tekenbureau Winter</title>
+    <meta
+      name="description"
+      content="Neem contact op met Tekenbureau Winter in Heerhugowaard voor een vrijblijvend gesprek over uw tekenproject."
+    />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-path="/contact/">
+    <a class="skip-link" href="#main-content">Direct naar inhoud</a>
+
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main-content">
+      <!-- ============ PAGE HEADER ============ -->
+      <section class="page-header">
+        <div class="container">
+          <span class="eyebrow">Contact</span>
+          <h1 data-reveal>Neem contact met ons op</h1>
+        </div>
+      </section>
+
+      <!-- ============ FORMULIER + GEGEVENS ============ -->
+      <section class="section section--divider" style="padding-top: 0;">
+        <div class="container">
+          <div class="contact-grid">
+            <form class="form" data-contact-form data-reveal novalidate aria-label="Contactformulier">
+              <div class="form__field">
+                <label for="naam">Naam *</label>
+                <input type="text" id="naam" name="naam" autocomplete="name" required />
+              </div>
+              <div class="form__field">
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+              <div class="form__field">
+                <label for="bericht">Bericht *</label>
+                <textarea id="bericht" name="bericht" required></textarea>
+              </div>
+              <!-- Honeypot: onzichtbaar voor mensen, lokt spambots -->
+              <div class="form__honeypot" aria-hidden="true">
+                <label for="laat-dit-veld-leeg">Laat dit veld leeg</label>
+                <input type="text" id="laat-dit-veld-leeg" name="laat-dit-veld-leeg" tabindex="-1" autocomplete="off" />
+              </div>
+              <button class="btn btn--primary" type="submit">
+                Verzenden
+                <svg class="btn__arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                  <path d="M0.5 5H13M13 5L8.5 0.5M13 5L8.5 9.5" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </button>
+              <p class="form__status" role="status" data-form-status></p>
+            </form>
+
+            <div class="contact-info" data-reveal>
+              <div id="location-art" class="line-art-wrap" style="max-width: 16rem;"></div>
+
+              <div class="contact-info__block">
+                <h3>Locatie</h3>
+                <address>
+                  Truus Schröderplantsoen 10<br />
+                  1705 ND, Heerhugowaard<br />
+                  Nederland
+                </address>
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Contactgegevens</h3>
+                <p>E-mail: <a href="mailto:info@tekenbureauwinter.com">info@tekenbureauwinter.com</a></p>
+                <p>Telefoon: <a href="tel:+31681656361">06-81 65 63 61</a></p>
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Zakelijk</h3>
+                <p>KVK: 99705559</p>
+              </div>
+
+              <div class="contact-info__block">
+                <h3>Volg ons</h3>
+                <div class="site-footer__social" style="margin-top: 0;">
+                  <a href="https://linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opent in nieuw tabblad)"><span aria-hidden="true">IN</span></a>
+                  <a href="https://instagram.com/tekenbureau_winter/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opent in nieuw tabblad)"><span aria-hidden="true">IG</span></a>
+                  <a href="https://facebook.com/profile.php?id=61588136734913&sk=directory_work" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opent in nieuw tabblad)"><span aria-hidden="true">FB</span></a>
+                  <a href="https://api.whatsapp.com/send?phone=681656361" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (opent in nieuw tabblad)"><span aria-hidden="true">WA</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/contact.js"></script>
+  </body>
+</html>
