@@ -82,8 +82,7 @@ export function sectionDrawing() {
       <polyline class="draw-path" data-order="1" points="80,320 80,180 280,60 480,180 480,320" />
     </g>
     <g style="stroke:${ACCENT_TINT}" stroke-width="1.4">
-      <polyline class="draw-path" data-order="2" points="190,140 190,90 280,90 280,140" />
-      <line x1="190" y1="140" x2="280" y2="140" />
+      <polyline class="draw-path" data-order="2" points="190,140 280,140 280,90 190,90 190,140" />
     </g>
     <g style="stroke:${LINE}" stroke-width="1" stroke-dasharray="2 5">
       <line class="draw-path" data-order="3" x1="280" y1="60" x2="280" y2="320" />

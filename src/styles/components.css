@@ -327,6 +327,12 @@
   font-weight: 400;
 }
 
+.pricing-card .btn {
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.06em;
+}
+
 .pricing-card--featured .pricing-card__price span {
   color: var(--color-paper-faint);
 }
@@ -396,7 +402,15 @@
 .line-art circle,
 .line-art rect {
   fill: none;
-  vector-effect: non-scaling-stroke;
+  /*
+    Bewust geen vector-effect:non-scaling-stroke: deze SVG's worden via
+    width:100% flink opgeschaald t.o.v. hun (kleine) viewBox. Met
+    non-scaling-stroke wordt het stroke-dasharray/-dashoffset (gezet op
+    basis van getTotalLength() in viewBox-eenheden) in een ándere
+    schaalruimte toegepast dan het pad zelf — de "volledige lengte" dekt
+    daardoor maar een deel van het zichtbare pad en de teken-animatie
+    lijkt halverwege vast te lopen, ook al staat dashoffset al op 0.
+  */
 }
 
 .draw-path {

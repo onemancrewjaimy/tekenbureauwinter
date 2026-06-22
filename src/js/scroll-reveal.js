@@ -88,18 +88,9 @@ export function initScrollReveal() {
       .forEach((order, i) => {
         tl.to(
           groups[order],
-          { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' },
-          i * 0.25
+          { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' },
+          i * 0.15
         );
       });
   });
-
-  // Webfonts en foto's laden ná de eerste ScrollTrigger-berekening en
-  // verschuiven de pagina-layout. Zonder refresh blijven start/eind-punten
-  // op de oude posities staan, waardoor animaties op het verkeerde moment
-  // starten en halverwege "vastlopen" zodra je voorbij het echte punt scrollt.
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => ScrollTrigger.refresh());
-  }
-  window.addEventListener('load', () => ScrollTrigger.refresh());
 }
