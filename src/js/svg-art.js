@@ -73,73 +73,136 @@ export function heroDrawing() {
   </svg>`;
 }
 
-/** Doorsnede-tekening (Diensten): dakconstructie met dakkapel en maatvoering */
-export function sectionDrawing() {
+/** Dakkapeltekening (Diensten): voor- en zijaanzicht van een dakkapel op een schuin dak */
+export function dakkapelDrawing() {
   return `
-  <svg class="line-art" viewBox="0 0 560 380" fill="none" role="img" aria-label="Doorsnedetekening van een dakconstructie met dakkapel">
-    <g style="stroke:${PAPER}" stroke-width="1.3">
-      <line class="draw-path" data-order="0" x1="40" y1="320" x2="520" y2="320" />
-      <polyline class="draw-path" data-order="1" points="80,320 80,180 280,60 480,180 480,320" />
-    </g>
-    <g style="stroke:${ACCENT_TINT}" stroke-width="1.4">
-      <polyline class="draw-path" data-order="2" points="190,140 280,140 280,90 190,90 190,140" />
-    </g>
-    <g style="stroke:${LINE}" stroke-width="1" stroke-dasharray="2 5">
-      <line class="draw-path" data-order="3" x1="280" y1="60" x2="280" y2="320" />
-    </g>
-    <g style="stroke:${PAPER}; fill:${PAPER}; font-family:${MONO}" stroke-width="1" font-size="11">
-      <line class="draw-path" data-order="4" x1="40" y1="340" x2="40" y2="60" />
-      <line x1="34" y1="320" x2="46" y2="320" />
-      <line x1="34" y1="60" x2="46" y2="60" />
-      <text x="30" y="190" text-anchor="end" transform="rotate(-90 30 190)">2950</text>
-      <text x="280" y="350" text-anchor="middle">DOORSNEDE A-A · 1:50</text>
-    </g>
-  </svg>`;
-}
-
-/** Situatietekening (Projecten): plattegrondraster met percelen en schaal */
-export function sitePlanDrawing() {
-  return `
-  <svg class="line-art" viewBox="0 0 560 400" fill="none" role="img" aria-label="Situatietekening met percelen en rasterlijnen">
+  <svg class="line-art" viewBox="0 0 560 380" fill="none" role="img" aria-label="Lijntekening van een dakkapel op een schuin dak">
     <g style="stroke:${LINE_FAINT}" stroke-width="1">
-      ${[0, 1, 2, 3, 4, 5].map((i) => `<line x1="${40 + i * 90}" y1="20" x2="${40 + i * 90}" y2="360" />`).join('')}
-      ${[0, 1, 2, 3, 4].map((i) => `<line x1="40" y1="${20 + i * 85}" x2="490" y2="${20 + i * 85}" />`).join('')}
+      <line x1="0" y1="320" x2="560" y2="320" />
     </g>
-    <g style="stroke:${PAPER}" stroke-width="1.4">
-      <rect class="draw-path" data-order="0" x="100" y="60" width="140" height="110" />
-      <rect class="draw-path" data-order="1" x="280" y="105" width="120" height="150" />
+
+    <!-- Dakvlak -->
+    <g style="stroke:${PAPER}" stroke-width="1.3">
+      <line class="draw-path" data-order="0" x1="40" y1="320" x2="280" y2="180" />
+      <line class="draw-path" data-order="0" x1="280" y1="180" x2="520" y2="320" />
     </g>
+
+    <!-- Dakkapel: opstaande wangen, voorgevel en plat dakje -->
     <g style="stroke:${ACCENT}" stroke-width="1.6">
-      <rect class="draw-path" data-order="2" x="130" y="190" width="80" height="70" />
+      <polyline class="draw-path" data-order="1" points="190,250 190,140 230,118 330,118 370,140 370,250" />
     </g>
-    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10">
-      <text x="40" y="14">A</text><text x="130" y="14">B</text><text x="220" y="14">C</text>
-      <text x="310" y="14">D</text><text x="400" y="14">E</text>
-      <text x="20" y="25">1</text><text x="20" y="110">2</text><text x="20" y="195">3</text>
-      <text x="20" y="280">4</text>
-      <text x="320" y="380" letter-spacing="1">SCHAAL 1:200</text>
+
+    <!-- Raam in de dakkapel -->
+    <g style="stroke:${ACCENT_TINT}" stroke-width="1.3">
+      <rect class="draw-path" data-order="2" x="230" y="150" width="100" height="80" />
+      <line x1="280" y1="150" x2="280" y2="230" stroke-dasharray="0" />
+    </g>
+
+    <!-- Maatlijnen -->
+    <g style="stroke:${PAPER}; fill:${PAPER}; font-family:${MONO}" stroke-width="1" font-size="11">
+      <line class="draw-path" data-order="3" x1="190" y1="276" x2="370" y2="276" />
+      <line x1="190" y1="270" x2="190" y2="282" />
+      <line x1="370" y1="270" x2="370" y2="282" />
+      <text x="280" y="296" text-anchor="middle" letter-spacing="1">1800</text>
+
+      <line class="draw-path" data-order="3" x1="396" y1="118" x2="396" y2="250" />
+      <line x1="390" y1="118" x2="402" y2="118" />
+      <line x1="390" y1="250" x2="402" y2="250" />
+      <text x="414" y="190" text-anchor="start" letter-spacing="1">1100</text>
+    </g>
+
+    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10" letter-spacing="1">
+      <text x="40" y="345">DAKKAPEL 01 · VOORAANZICHT</text>
     </g>
   </svg>`;
 }
 
-/** Tekentafel-illustratie (Over): passer en winkelhaak */
-export function draftingToolsDrawing() {
+/** Aanbouwtekening (Projecten): zijaanzicht van een aanbouw met glazen pui tegen de woning */
+export function aanbouwDrawing() {
   return `
-  <svg class="line-art" viewBox="0 0 420 420" fill="none" role="img" aria-label="Lijntekening van een passer en winkelhaak">
-    <g style="stroke:${PAPER}" stroke-width="1.3">
-      <line class="draw-path" data-order="0" x1="120" y1="360" x2="210" y2="60" />
-      <line class="draw-path" data-order="1" x1="300" y1="360" x2="210" y2="60" />
-      <circle cx="210" cy="60" r="5" style="fill:${PAPER}" stroke="none" />
-      <path class="draw-path" data-order="2" d="M 150 300 A 90 90 0 0 1 270 300" />
+  <svg class="line-art" viewBox="0 0 560 360" fill="none" role="img" aria-label="Lijntekening van een aanbouw met glazen pui tegen de woning">
+    <g style="stroke:${LINE_FAINT}" stroke-width="1">
+      <line x1="0" y1="300" x2="560" y2="300" />
     </g>
-    <g style="stroke:${ACCENT_TINT}" stroke-width="1.5">
-      <polyline class="draw-path" data-order="3" points="60,330 60,230 200,230" />
+
+    <!-- Bestaande woning (links, deels in beeld) -->
+    <g style="stroke:${PAPER}" stroke-width="1.4">
+      <polyline class="draw-path" data-order="0" points="40,300 40,120 130,60 220,120 220,300" />
     </g>
-    <g style="stroke:${LINE}" stroke-width="1" stroke-dasharray="2 6">
-      <line class="draw-path" data-order="4" x1="40" y1="360" x2="380" y2="360" />
+
+    <!-- Aanbouw: platte kap met grote glazen pui -->
+    <g style="stroke:${ACCENT}" stroke-width="1.6">
+      <polyline class="draw-path" data-order="1" points="220,300 220,170 420,170 420,300" />
     </g>
-    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10">
-      <text x="40" y="385" letter-spacing="1">SCHETS 01 · WINTER</text>
+    <g style="stroke:${ACCENT_TINT}" stroke-width="1.3">
+      <line class="draw-path" data-order="2" x1="260" y1="300" x2="260" y2="190" />
+      <line class="draw-path" data-order="2" x1="380" y1="300" x2="380" y2="190" />
+      <line class="draw-path" data-order="2" x1="260" y1="190" x2="380" y2="190" />
+      <line x1="320" y1="190" x2="320" y2="300" stroke-dasharray="0" />
+    </g>
+
+    <!-- Maatlijnen -->
+    <g style="stroke:${PAPER}; fill:${PAPER}; font-family:${MONO}" stroke-width="1" font-size="11">
+      <line class="draw-path" data-order="3" x1="220" y1="326" x2="420" y2="326" />
+      <line x1="220" y1="320" x2="220" y2="332" />
+      <line x1="420" y1="320" x2="420" y2="332" />
+      <text x="320" y="346" text-anchor="middle" letter-spacing="1">4000</text>
+
+      <line class="draw-path" data-order="3" x1="446" y1="170" x2="446" y2="300" />
+      <line x1="440" y1="170" x2="452" y2="170" />
+      <line x1="440" y1="300" x2="452" y2="300" />
+      <text x="464" y="240" text-anchor="start" letter-spacing="1">2400</text>
+    </g>
+
+    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10" letter-spacing="1">
+      <text x="40" y="334">AANBOUW 01 · ZIJAANZICHT</text>
+    </g>
+  </svg>`;
+}
+
+/** Kozijntekening (Over): elevatie van een kozijn met draairaam en bovenlicht */
+export function kozijnDrawing() {
+  return `
+  <svg class="line-art" viewBox="0 0 420 420" fill="none" role="img" aria-label="Lijntekening van een kozijn met draairaam en bovenlicht">
+    <!-- Buitenkant kozijn -->
+    <g style="stroke:${PAPER}" stroke-width="1.4">
+      <rect class="draw-path" data-order="0" x="110" y="60" width="200" height="300" />
+    </g>
+
+    <!-- Bovenlicht -->
+    <g style="stroke:${LINE}" stroke-width="1">
+      <line class="draw-path" data-order="1" x1="110" y1="120" x2="310" y2="120" />
+    </g>
+
+    <!-- Draairaam: twee vleugels met openingssymbool -->
+    <g style="stroke:${ACCENT_TINT}" stroke-width="1.3">
+      <line class="draw-path" data-order="2" x1="210" y1="120" x2="210" y2="360" />
+    </g>
+    <g style="stroke:${ACCENT}" stroke-width="1.2" stroke-dasharray="3 5">
+      <polyline class="draw-path" data-order="3" points="118,128 202,240 118,352" />
+      <polyline class="draw-path" data-order="3" points="302,128 218,240 302,352" />
+    </g>
+
+    <!-- Onderdorpel -->
+    <g style="stroke:${PAPER}" stroke-width="1.6">
+      <line class="draw-path" data-order="4" x1="92" y1="360" x2="328" y2="360" />
+    </g>
+
+    <!-- Maatlijnen -->
+    <g style="stroke:${PAPER}; fill:${PAPER}; font-family:${MONO}" stroke-width="1" font-size="11">
+      <line class="draw-path" data-order="5" x1="110" y1="386" x2="310" y2="386" />
+      <line x1="110" y1="380" x2="110" y2="392" />
+      <line x1="310" y1="380" x2="310" y2="392" />
+      <text x="210" y="406" text-anchor="middle" letter-spacing="1">1200</text>
+
+      <line class="draw-path" data-order="5" x1="346" y1="60" x2="346" y2="360" />
+      <line x1="340" y1="60" x2="352" y2="60" />
+      <line x1="340" y1="360" x2="352" y2="360" />
+      <text x="364" y="215" text-anchor="start" letter-spacing="1">2300</text>
+    </g>
+
+    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10" letter-spacing="1">
+      <text x="110" y="40">KOZIJN 01 · DRAAIRAAM</text>
     </g>
   </svg>`;
 }
@@ -168,29 +231,6 @@ export function tierElevationsDrawing() {
       <text x="40" y="208">BASIS</text>
       <text x="300" y="208">VERGUNNING</text>
       <text x="560" y="208">TOTAAL</text>
-    </g>
-  </svg>`;
-}
-
-/** Locatiemarkering (Contact): kruispeiling met coördinaten van Heerhugowaard */
-export function locationDrawing() {
-  return `
-  <svg class="line-art" viewBox="0 0 420 420" fill="none" role="img" aria-label="Locatiemarkering met coördinaten van Heerhugowaard">
-    <g style="stroke:${LINE_FAINT}" stroke-width="1">
-      <line x1="210" y1="0" x2="210" y2="420" />
-      <line x1="0" y1="210" x2="420" y2="210" />
-    </g>
-    <g style="stroke:${ACCENT}" stroke-width="1.6">
-      <circle class="draw-path" data-order="0" cx="210" cy="210" r="70" />
-      <circle class="draw-path" data-order="1" cx="210" cy="210" r="4" style="fill:${ACCENT}" stroke="none" />
-    </g>
-    <g style="stroke:${PAPER}" stroke-width="1" stroke-dasharray="2 6">
-      <circle class="draw-path" data-order="2" cx="210" cy="210" r="130" />
-    </g>
-    <g style="fill:${PAPER}; font-family:${MONO}" font-size="10" letter-spacing="1">
-      <text x="226" y="150">N 52.668°</text>
-      <text x="226" y="166">E 4.840°</text>
-      <text x="20" y="404">HEERHUGOWAARD · NL</text>
     </g>
   </svg>`;
 }
