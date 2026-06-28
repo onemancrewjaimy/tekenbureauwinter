@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projecten — Tekenbureau Winter</title>
+    <title>Projecten - Tekenbureau Winter</title>
     <meta
       name="description"
       content="Een overzicht van projecten van Tekenbureau Winter: aanbouw, opbouw, overkapping, dakkapel en detaillering."
     />
-    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body data-path="/projecten/">
+  <body data-path="projecten.html">
     <a class="skip-link" href="#main-content">Direct naar inhoud</a>
 
     <header id="site-header" class="site-header"></header>
@@ -44,37 +45,37 @@
           <ul class="gallery" data-reveal-stagger>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-aanbouw.jpg" alt="Werktekening van een aanbouwproject op het scherm" loading="lazy" width="592" height="442" />
+                <img src="images/project-aanbouw.jpg" alt="Werktekening van een aanbouwproject op het scherm" loading="lazy" width="592" height="442" />
               </figure>
               <figcaption>Aanbouw</figcaption>
             </li>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-opbouw.jpg" alt="3D-model van een opbouwproject in ontwerpsoftware" loading="lazy" width="592" height="443" />
+                <img src="images/project-opbouw.jpg" alt="3D-model van een opbouwproject in ontwerpsoftware" loading="lazy" width="592" height="443" />
               </figure>
               <figcaption>Opbouw</figcaption>
             </li>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-overkapping.jpg" alt="Detail van een handgetekende schets voor een overkapping" loading="lazy" width="592" height="442" />
+                <img src="images/project-overkapping.jpg" alt="Detail van een handgetekende schets voor een overkapping" loading="lazy" width="592" height="442" />
               </figure>
               <figcaption>Overkapping</figcaption>
             </li>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-dakkapel.jpg" alt="Handgetekende plattegrond met maatvoering voor een dakkapelproject" loading="lazy" width="1317" height="795" />
+                <img src="images/project-dakkapel.jpg" alt="Handgetekende plattegrond met maatvoering voor een dakkapelproject" loading="lazy" width="1317" height="795" />
               </figure>
               <figcaption>Dakkapel</figcaption>
             </li>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-detaillering.jpg" alt="Gedetailleerde handgetekende bouwkundige doorsnede" loading="lazy" width="1600" height="1067" />
+                <img src="images/project-detaillering.jpg" alt="Gedetailleerde handgetekende bouwkundige doorsnede" loading="lazy" width="1600" height="1067" />
               </figure>
               <figcaption>Detaillering</figcaption>
             </li>
             <li class="gallery__item">
               <figure class="photo-placeholder">
-                <img src="../images/project-vergunningsaanvraag.jpg" alt="Tekeningen op tafel ten behoeve van een vergunningsaanvraag" loading="lazy" width="1600" height="1068" />
+                <img src="images/project-vergunningsaanvraag.jpg" alt="Tekeningen op tafel ten behoeve van een vergunningsaanvraag" loading="lazy" width="1600" height="1068" />
               </figure>
               <figcaption>Vergunningsaanvraag</figcaption>
             </li>
@@ -92,7 +93,7 @@
             al uw tekenwerk. Neem contact op voor een vrijblijvend gesprek!
           </p>
           <div class="cta-band__actions" data-reveal>
-            <a class="btn btn--primary" href="../contact/">
+            <a class="btn btn--primary" href="contact.html">
               Vraag een offerte aan
               <svg class="btn__arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
                 <path d="M0.5 5H13M13 5L8.5 0.5M13 5L8.5 9.5" stroke="currentColor" stroke-width="1.2" />
@@ -105,7 +106,8 @@
 
     <footer id="site-footer" class="site-footer"></footer>
 
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/pages/projecten.js"></script>
+    <script src="js/vendor/gsap.min.js"></script>
+    <script src="js/vendor/ScrollTrigger.min.js"></script>
+    <script src="js/site.js"></script>
   </body>
 </html>
