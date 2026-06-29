@@ -536,12 +536,36 @@
       if (submitButton) submitButton.disabled = true;
       setStatus('Bericht wordt verzonden…', null);
 
-      // Gesimuleerde verzending - vervang door een echte API-aanroep.
-      setTimeout(function () {
-        setStatus('Bedankt, ' + name.value.trim().split(' ')[0] + '! Je bericht is verzonden. We reageren binnen één werkdag.', 'success');
-        form.reset();
-        if (submitButton) submitButton.disabled = false;
-      }, 500);
+      var firstName = name.value.trim().split(' ')[0];
+
+      // Echte verzending via Web3Forms (AJAX, geen redirect).
+      var payload = {};
+      new FormData(form).forEach(function (value, key) { payload[key] = value; });
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (response) {
+          return response.json().then(function (data) {
+            return { ok: response.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.data.success) {
+            setStatus('Bedankt, ' + firstName + '! Je bericht is verzonden. We reageren binnen één werkdag.', 'success');
+            form.reset();
+          } else {
+            setStatus((result.data && result.data.message) || 'Er ging iets mis bij het verzenden. Probeer het later opnieuw of mail ons direct.', 'error');
+          }
+        })
+        .catch(function () {
+          setStatus('Er ging iets mis bij het verzenden. Controleer je internetverbinding of mail ons direct.', 'error');
+        })
+        .then(function () {
+          if (submitButton) submitButton.disabled = false;
+        });
     });
   }
 

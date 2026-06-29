@@ -35,7 +35,18 @@
       <section class="section section--divider" style="padding-top: 0;">
         <div class="container">
           <div class="contact-grid">
-            <form class="form" data-contact-form data-reveal novalidate aria-label="Contactformulier">
+            <form
+              class="form"
+              data-contact-form
+              data-reveal
+              novalidate
+              aria-label="Contactformulier"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input type="hidden" name="access_key" value="1773cda7-290c-4846-9b85-f4f7ee2966b0" />
+              <input type="hidden" name="subject" value="Nieuw bericht via tekenbureauwinter.nl" />
+              <input type="hidden" name="from_name" value="Tekenbureau Winter website" />
               <div class="form__field">
                 <label for="naam">Naam *</label>
                 <input type="text" id="naam" name="naam" autocomplete="name" required />
