@@ -24,7 +24,7 @@
     { label: 'Diensten', href: 'diensten.html' },
     { label: 'Projecten', href: 'projecten.html' },
     { label: 'Over Tekenbureau Winter', href: 'over-tekenbureau-winter.html' },
-    { label: 'Pakketen', href: 'pakketen.html' },
+    { label: 'Pakketten', href: 'pakketten.html' },
     { label: 'Contact', href: 'contact.html' },
   ];
 

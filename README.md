@@ -29,7 +29,7 @@ root:
 - `diensten.html` — Diensten
 - `projecten.html` — Projecten
 - `over-tekenbureau-winter.html` — Over Tekenbureau Winter
-- `pakketen.html` — Pakketen
+- `pakketten.html` — Pakketten
 - `contact.html` — Contact
 
 Alle paden (links, logo, CSS, JS, afbeeldingen) zijn relatief, dus de site
@@ -55,7 +55,7 @@ uploaden via FTP) — sleep de map erin en klaar.
 ├── diensten.html
 ├── projecten.html
 ├── over-tekenbureau-winter.html
-├── pakketen.html
+├── pakketten.html
 ├── contact.html
 ├── css/
 │   └── styles.css                   Alle stijlen (tokens, base, layout,
