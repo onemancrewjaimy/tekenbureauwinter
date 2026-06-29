@@ -21,7 +21,26 @@
   <body data-path="diensten.html">
     <a class="skip-link" href="#main-content">Direct naar inhoud</a>
 
-    <header id="site-header" class="site-header"></header>
+    <header id="site-header" class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="Tekenbureau Winter - naar de homepage">
+          <img src="images/logo.png" alt="Tekenbureau Winter" width="180" height="47" loading="eager" />
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">
+          <ul class="site-nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diensten.html" aria-current="page">Diensten</a></li>
+            <li><a href="projecten.html">Projecten</a></li>
+            <li><a href="over-tekenbureau-winter.html">Over Tekenbureau Winter</a></li>
+            <li><a href="pakketten.html">Pakketten</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
     <main id="main-content">
       <!-- ============ PAGE HEADER ============ -->

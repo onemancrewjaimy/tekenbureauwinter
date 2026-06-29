@@ -17,11 +17,64 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Tekenbureau Winter",
+        "description": "Bouwkundig tekenbureau voor aanbouw, opbouw, overkappingen, dakkapellen en detaillering in Heerhugowaard - voor particulieren en bouwbedrijven.",
+        "url": "https://tekenbureauwinter.nl/",
+        "image": "https://tekenbureauwinter.nl/images/logo.png",
+        "logo": "https://tekenbureauwinter.nl/images/logo.png",
+        "telephone": "+31681656361",
+        "email": "info@tekenbureauwinter.com",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Truus Schröderplantsoen 10",
+          "postalCode": "1705 ND",
+          "addressLocality": "Heerhugowaard",
+          "addressCountry": "NL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.668,
+          "longitude": 4.840
+        },
+        "areaServed": { "@type": "City", "name": "Heerhugowaard" },
+        "founder": { "@type": "Person", "name": "Yannick Winter" },
+        "sameAs": [
+          "https://www.linkedin.com/in/yannick-winter-39323b3b1/",
+          "https://www.instagram.com/tekenbureau.winter/",
+          "https://facebook.com/profile.php?id=61588136734913"
+        ],
+        "identifier": { "@type": "PropertyValue", "name": "KVK", "value": "99705559" }
+      }
+    </script>
   </head>
   <body data-path="index.html">
     <a class="skip-link" href="#main-content">Direct naar inhoud</a>
 
-    <header id="site-header" class="site-header"></header>
+    <header id="site-header" class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="Tekenbureau Winter - naar de homepage">
+          <img src="images/logo.png" alt="Tekenbureau Winter" width="180" height="47" loading="eager" />
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">
+          <ul class="site-nav__list">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="diensten.html">Diensten</a></li>
+            <li><a href="projecten.html">Projecten</a></li>
+            <li><a href="over-tekenbureau-winter.html">Over Tekenbureau Winter</a></li>
+            <li><a href="pakketten.html">Pakketten</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
     <main id="main-content">
       <!-- ============ HERO ============ -->

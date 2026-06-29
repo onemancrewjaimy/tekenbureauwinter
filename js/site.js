@@ -12,21 +12,16 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* ============================================================
-   * 1. Gedeelde header & footer (partials)
+   * 1. Gedeelde footer (partial)
    * ----------------------------------------------------------------
    * Platte structuur: elke pagina is één .html-bestand in de root.
    * Alle links zijn gewone bestandsnamen (geen mappen, geen "/"), zodat
    * navigeren overal werkt - ook als je de bestanden direct opent.
+   *
+   * De header met navigatie staat statisch in elke .html (zie de bootstrap
+   * onderaan) zodat crawlers zonder JS de interne links zien. Alleen de
+   * footer wordt hier gerenderd, zodat die op één plek onderhouden blijft.
    * ========================================================== */
-
-  var NAV_LINKS = [
-    { label: 'Home', href: 'index.html' },
-    { label: 'Diensten', href: 'diensten.html' },
-    { label: 'Projecten', href: 'projecten.html' },
-    { label: 'Over Tekenbureau Winter', href: 'over-tekenbureau-winter.html' },
-    { label: 'Pakketten', href: 'pakketten.html' },
-    { label: 'Contact', href: 'contact.html' },
-  ];
 
   // Merk-iconen (24x24, fill = currentColor zodat ze de footer-kleur volgen).
   var SOCIAL_ICONS = {
@@ -46,30 +41,6 @@
   function socialIcon(name) {
     return '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">' +
       '<path d="' + SOCIAL_ICONS[name] + '" /></svg>';
-  }
-
-  function isActive(currentPath, href) {
-    return currentPath === href;
-  }
-
-  function renderHeader(currentPath) {
-    var links = NAV_LINKS.map(function (link) {
-      return '\n      <li>\n        <a href="' + link.href + '" ' +
-        (isActive(currentPath, link.href) ? 'aria-current="page"' : '') + '>' + link.label + '</a>\n      </li>';
-    }).join('');
-
-    return '' +
-      '<div class="site-header__inner container">' +
-      '  <a class="site-header__logo" href="index.html" aria-label="Tekenbureau Winter - naar de homepage">' +
-      '    <img src="images/logo.png" alt="Tekenbureau Winter" width="180" height="47" loading="eager" />' +
-      '  </a>' +
-      '  <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">' +
-      '    <ul class="site-nav__list">' + links + '</ul>' +
-      '  </nav>' +
-      '  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">' +
-      '    <span></span><span></span><span></span>' +
-      '  </button>' +
-      '</div>';
   }
 
   function renderFooter() {
@@ -642,11 +613,10 @@
 
   document.documentElement.classList.remove('no-js');
 
-  var headerEl = document.getElementById('site-header');
+  // De header (incl. navigatie) staat statisch in elke .html zodat zoekmachines
+  // en crawlers die geen JS uitvoeren de interne links zien. De footer wordt
+  // hieronder wel gerenderd zodat hij maar op één plek onderhouden hoeft te worden.
   var footerEl = document.getElementById('site-footer');
-  var currentPath = document.body.dataset.path || 'index.html';
-
-  if (headerEl) headerEl.innerHTML = renderHeader(currentPath);
   if (footerEl) footerEl.innerHTML = renderFooter();
 
   injectPageArt();
