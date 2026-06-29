@@ -460,6 +460,7 @@ main {
 
 .site-footer__brand .site-footer__logo img {
   height: 1.9rem;
+  width: auto;
   filter: invert(1) brightness(1.15);
   margin-bottom: var(--space-3);
 }

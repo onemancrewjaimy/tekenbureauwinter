@@ -53,7 +53,7 @@
       '<div class="site-footer__inner container">' +
       '  <div class="site-footer__brand">' +
       '    <a class="site-footer__logo" href="/" aria-label="Tekenbureau Winter - naar de homepage">' +
-      '      <img src="images/logo.png" alt="Tekenbureau Winter" width="160" height="42" loading="lazy" />' +
+      '      <img src="images/logo.png" alt="Tekenbureau Winter" width="400" height="104" loading="lazy" />' +
       '    </a>' +
       '    <p class="site-footer__tagline">Jouw visie, onze blauwdruk</p>' +
       '  </div>' +
