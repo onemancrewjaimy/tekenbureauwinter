@@ -90,6 +90,7 @@
       '</div>' +
       '<div class="site-footer__bottom container">' +
       '  <p>&copy; 2026 Tekenbureau Winter</p>' +
+      '  <p class="site-footer__credit">Met zorg gebouwd door <a href="https://brand-on.org" target="_blank" rel="noopener">brand-on.org</a></p>' +
       '  <p class="blueprint-tag">N 52.668° / E 4.840° - Heerhugowaard</p>' +
       '</div>';
   }
