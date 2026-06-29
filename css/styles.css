@@ -998,6 +998,24 @@ main {
 }
 
 /*
+  De losse lijntekeningen worden net als de hero via JS ingeladen. Door de
+  container vooraf op de juiste verhouding (viewBox van elke tekening) te
+  zetten, reserveren we de hoogte en voorkomen we layout shift (CLS).
+*/
+#section-art {
+  aspect-ratio: 560 / 380;
+}
+#site-plan-art {
+  aspect-ratio: 560 / 360;
+}
+#drafting-art {
+  aspect-ratio: 420 / 420;
+}
+#tier-art {
+  aspect-ratio: 720 / 220;
+}
+
+/*
   Geen "stroke: currentColor" hier: elke <g> in svg-art.js zet zijn eigen
   stroke-kleur via style="stroke:var(--color-...)", en die erft normaal
   door naar de kindelementen. Een regel hier zou die overerving juist
@@ -1249,6 +1267,10 @@ main {
 
 .hero__art {
   position: relative;
+  /* Ruimte vooraf reserveren voor de SVG-plattegrond die via JS wordt
+     ingeladen, zodat de hero niet verspringt (CLS) zodra de tekening
+     verschijnt. Ratio = viewBox van de hero-tekening (640 x 560). */
+  aspect-ratio: 640 / 560;
 }
 
 .hero__meta-row {
