@@ -525,6 +525,11 @@ main {
   letter-spacing: 0.04em;
 }
 
+.site-footer__social svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 .site-footer__bottom {
   display: flex;
   align-items: center;
